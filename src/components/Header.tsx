@@ -12,12 +12,12 @@ const Header: React.FC<HeaderProps> = ({ currentLanguage, onLanguageToggle, user
   const translations = {
     pt: {
       welcome: 'Bem-vindo',
-      platform: 'Plataforma Educacional Wai Wai',
+      platform: 'Wailingo',
       language: 'Idioma'
     },
     waiwai: {
       welcome: 'Wayamî',
-      platform: 'Wai Wai Mbaé Kuaá Retama',
+      platform: 'Wailingo',
       language: 'Nheenga'
     }
   };
