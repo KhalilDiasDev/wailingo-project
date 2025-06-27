@@ -3,7 +3,7 @@ import React from 'react';
 import { BookOpen, Award, Users } from 'lucide-react';
 
 interface WelcomeCardProps {
-  language: 'pt' | 'indigenous';
+  language: 'pt' | 'waiwai';
   userProgress?: {
     lessonsCompleted: number;
     badges: number;
@@ -14,22 +14,22 @@ interface WelcomeCardProps {
 const WelcomeCard: React.FC<WelcomeCardProps> = ({ language, userProgress }) => {
   const translations = {
     pt: {
-      title: 'Sua jornada de aprendizado',
-      subtitle: 'Continue aprendendo e preservando nossa cultura',
+      title: 'Sua jornada na língua Wai Wai',
+      subtitle: 'Preserve nossa cultura ancestral',
       lessons: 'Lições concluídas',
       badges: 'Conquistas',
       streak: 'Dias seguidos',
       continue: 'Continuar aprendendo',
-      start: 'Começar agora'
+      start: 'Começar jornada'
     },
-    indigenous: {
-      title: 'Ne kuaá rape',
-      subtitle: 'Reikuaá pukusawa yané kultura',
-      lessons: 'Mbaé kuaá opaá',
+    waiwai: {
+      title: 'Ne kuaá rape Wai Wai rupî',
+      subtitle: 'Murakí yane tamuxî kultura',
+      lessons: 'Mbaé kuaá pîrî',
       badges: 'Mbaé porandu',
-      streak: 'Ara oiko',
-      continue: 'Aikuaá jey',
-      start: 'Aipiri koá'
+      streak: 'Ara tamîkî',
+      continue: 'Tîkse kuaá',
+      start: 'Aipiri rape'
     }
   };
 

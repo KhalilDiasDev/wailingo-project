@@ -3,7 +3,7 @@ import React from 'react';
 import { User, Menu } from 'lucide-react';
 
 interface HeaderProps {
-  currentLanguage: 'pt' | 'indigenous';
+  currentLanguage: 'pt' | 'waiwai';
   onLanguageToggle: () => void;
   userName?: string;
 }
@@ -12,12 +12,12 @@ const Header: React.FC<HeaderProps> = ({ currentLanguage, onLanguageToggle, user
   const translations = {
     pt: {
       welcome: 'Bem-vindo',
-      platform: 'Plataforma Educacional Amazônia',
+      platform: 'Plataforma Educacional Wai Wai',
       language: 'Idioma'
     },
-    indigenous: {
-      welcome: 'Yané resá',
-      platform: 'Mbaé Kuaá Retama',
+    waiwai: {
+      welcome: 'Wayamî',
+      platform: 'Wai Wai Mbaé Kuaá Retama',
       language: 'Nheenga'
     }
   };
@@ -45,7 +45,7 @@ const Header: React.FC<HeaderProps> = ({ currentLanguage, onLanguageToggle, user
             className="bg-white/20 hover:bg-white/30 px-3 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-2"
           >
             <span>🗣️</span>
-            {currentLanguage === 'pt' ? 'Indígena' : 'Português'}
+            {currentLanguage === 'pt' ? 'Wai Wai' : 'Português'}
           </button>
           
           <div className="w-8 h-8 bg-white/20 rounded-full flex items-center justify-center">

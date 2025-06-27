@@ -5,7 +5,7 @@ import { Home, BookOpen, Award, User, BarChart3 } from 'lucide-react';
 interface NavigationMenuProps {
   activeTab: 'home' | 'lessons' | 'achievements' | 'profile' | 'progress';
   onTabChange: (tab: 'home' | 'lessons' | 'achievements' | 'profile' | 'progress') => void;
-  language: 'pt' | 'indigenous';
+  language: 'pt' | 'waiwai';
   isTeacher?: boolean;
 }
 
@@ -23,12 +23,12 @@ const NavigationMenu: React.FC<NavigationMenuProps> = ({
       profile: 'Perfil',
       progress: 'Progresso'
     },
-    indigenous: {
+    waiwai: {
       home: 'Tendawa',
       lessons: 'Mbaé kuaá',
       achievements: 'Mbaé porandu',
       profile: 'Aé',
-      progress: 'Mbaé oiko'
+      progress: 'Tamîkî'
     }
   };
 

@@ -5,22 +5,25 @@ import WelcomeCard from '../components/WelcomeCard';
 import LessonCard from '../components/LessonCard';
 import NavigationMenu from '../components/NavigationMenu';
 import AchievementBadge from '../components/AchievementBadge';
+import LessonActivity from '../components/LessonActivity';
 import { useToast } from '../hooks/use-toast';
 
 const Index = () => {
-  const [currentLanguage, setCurrentLanguage] = useState<'pt' | 'indigenous'>('pt');
+  const [currentLanguage, setCurrentLanguage] = useState<'pt' | 'waiwai'>('pt');
   const [activeTab, setActiveTab] = useState<'home' | 'lessons' | 'achievements' | 'profile' | 'progress'>('home');
-  const [userProgress] = useState({
+  const [activeLessonId, setActiveLessonId] = useState<number | null>(null);
+  const [userProgress, setUserProgress] = useState({
     lessonsCompleted: 5,
     badges: 3,
-    streak: 7
+    streak: 7,
+    completedLessons: new Set([1, 2])
   });
   const { toast } = useToast();
 
   const handleLanguageToggle = () => {
-    setCurrentLanguage(prev => prev === 'pt' ? 'indigenous' : 'pt');
+    setCurrentLanguage(prev => prev === 'pt' ? 'waiwai' : 'pt');
     toast({
-      title: currentLanguage === 'pt' ? 'Idioma alterado para Indígena' : 'Nheenga moĩ Português pupé',
+      title: currentLanguage === 'pt' ? 'Idioma alterado para Wai Wai' : 'Nheenga moĩ Português pupé',
       duration: 2000,
     });
   };
@@ -30,60 +33,60 @@ const Index = () => {
       id: 1,
       title: {
         pt: 'Saudações e Apresentações',
-        indigenous: 'Mundusawa'
+        waiwai: 'Wayamî Yewka irumu'
       },
       description: {
-        pt: 'Aprenda como cumprimentar e se apresentar',
-        indigenous: 'Kuaá mbaé yané rera'
+        pt: 'Aprenda cumprimentos e como se apresentar em Wai Wai',
+        waiwai: 'Kuaá wayamî yewka Wai Wai nheenga rupî'
       },
       type: 'vocabulary' as const,
       difficulty: 'easy' as const,
       isLocked: false,
-      isCompleted: true
+      isCompleted: userProgress.completedLessons.has(1)
     },
     {
       id: 2,
       title: {
-        pt: 'Animais da Floresta',
-        indigenous: 'Kapií Soí mbaé'
+        pt: 'Animais da Floresta Amazônica',
+        waiwai: 'Kaá Soí Amazonas suí'
       },
       description: {
-        pt: 'Conheça os animais amazônicos',
-        indigenous: 'Kuaá soí mbaé Amazonas suí'
+        pt: 'Conheça os animais sagrados da floresta Wai Wai',
+        waiwai: 'Kuaá soí ukwawasawa yane kaá suí'
       },
       type: 'vocabulary' as const,
       difficulty: 'easy' as const,
       isLocked: false,
-      isCompleted: true
+      isCompleted: userProgress.completedLessons.has(2)
     },
     {
       id: 3,
       title: {
-        pt: 'Lendas e Tradições',
-        indigenous: 'Maã Turusú'
+        pt: 'Lendas Tradicionais Wai Wai',
+        waiwai: 'Yane Tamuxî Pamîle'
       },
       description: {
-        pt: 'Histórias sagradas do povo',
-        indigenous: 'Maã sagrada yané iwaka suí'
+        pt: 'Histórias sagradas e tradições ancestrais',
+        waiwai: 'Pamîle ukwawasawa yane tamuxî suí'
       },
       type: 'culture' as const,
       difficulty: 'medium' as const,
-      isLocked: false,
+      isLocked: !userProgress.completedLessons.has(1),
       isCompleted: false
     },
     {
       id: 4,
       title: {
-        pt: 'Estruturas Básicas',
-        indigenous: 'Nheenga Yepé'
+        pt: 'Estruturas Básicas da Língua',
+        waiwai: 'Nheenga Yepé Katú'
       },
       description: {
-        pt: 'Gramática fundamental',
-        indigenous: 'Mbaé tẽ nheenga'
+        pt: 'Gramática fundamental da língua Wai Wai',
+        waiwai: 'Wai Wai nheenga mbaé tẽ'
       },
       type: 'grammar' as const,
       difficulty: 'medium' as const,
-      isLocked: true,
+      isLocked: !userProgress.completedLessons.has(2),
       isCompleted: false
     }
   ];
@@ -91,42 +94,55 @@ const Index = () => {
   const achievements = [
     {
       title: {
-        pt: 'Primeiro Passo',
-        indigenous: 'Yepé Pysyka'
+        pt: 'Primeiro Passo na Jornada',
+        waiwai: 'Yepé Pysyka Rape rupî'
       },
       description: {
-        pt: 'Complete sua primeira lição',
-        indigenous: 'Muapysyk yepé mbaé kuaá'
+        pt: 'Completou sua primeira lição em Wai Wai',
+        waiwai: 'Muapysyk yepé mbaé kuaá Wai Wai rupî'
       },
       icon: '🌱',
-      isUnlocked: true,
+      isUnlocked: userProgress.completedLessons.has(1),
       rarity: 'common' as const
     },
     {
       title: {
-        pt: 'Guardião da Cultura',
-        indigenous: 'Kultura Murakí'
+        pt: 'Guardião da Cultura Ancestral',
+        waiwai: 'Tamuxî Kultura Murakí'
       },
       description: {
-        pt: 'Complete 5 lições culturais',
-        indigenous: 'Muapysyk 5 kultura mbaé kuaá'
+        pt: 'Concluiu 3 lições sobre tradições Wai Wai',
+        waiwai: 'Muapysyk musapí mbaé kuaá yane kultura'
       },
       icon: '🏛️',
-      isUnlocked: true,
+      isUnlocked: userProgress.completedLessons.size >= 2,
       rarity: 'rare' as const
     },
     {
       title: {
-        pt: 'Mestre das Palavras',
-        indigenous: 'Nheenga Mira'
+        pt: 'Mestre das Palavras Sagradas',
+        waiwai: 'Nheenga Ukwawasawa Mira'
       },
       description: {
-        pt: 'Domine 100 palavras',
-        indigenous: 'Kuaá 100 nheenga'
+        pt: 'Dominou 50 palavras em Wai Wai',
+        waiwai: 'Kuaá 50 ewka Wai Wai nheenga rupî'
       },
       icon: '📚',
       isUnlocked: false,
       rarity: 'legendary' as const
+    },
+    {
+      title: {
+        pt: 'Contador de Histórias',
+        waiwai: 'Pamîle Ukumukameusara'
+      },
+      description: {
+        pt: 'Ouviu todas as lendas tradicionais',
+        waiwai: 'Enî opaĩ tamuxî pamîle'
+      },
+      icon: '📖',
+      isUnlocked: false,
+      rarity: 'rare' as const
     }
   ];
 
@@ -135,17 +151,64 @@ const Index = () => {
     if (lesson?.isLocked) {
       toast({
         title: currentLanguage === 'pt' ? 'Lição bloqueada' : 'Mbaé kuaá ojokái',
-        description: currentLanguage === 'pt' ? 'Complete as lições anteriores primeiro' : 'Muapysyk mokõi mbaé kuaá senundé',
+        description: currentLanguage === 'pt' ? 
+          'Complete as lições anteriores primeiro' : 
+          'Muapysyk mokõi mbaé kuaá senundé',
         variant: 'destructive'
       });
       return;
     }
     
-    toast({
-      title: currentLanguage === 'pt' ? 'Iniciando lição...' : 'Oikutu mbaé kuaá...',
-      description: lesson?.title[currentLanguage],
-    });
+    setActiveLessonId(lessonId);
   };
+
+  const handleLessonComplete = (score: number) => {
+    if (activeLessonId) {
+      const newCompletedLessons = new Set(userProgress.completedLessons);
+      newCompletedLessons.add(activeLessonId);
+      
+      setUserProgress(prev => ({
+        ...prev,
+        lessonsCompleted: prev.lessonsCompleted + (newCompletedLessons.has(activeLessonId) ? 0 : 1),
+        badges: prev.badges + (score > 70 ? 1 : 0),
+        completedLessons: newCompletedLessons
+      }));
+
+      toast({
+        title: currentLanguage === 'pt' ? 'Lição concluída!' : 'Mbaé kuaá pîrî!',
+        description: currentLanguage === 'pt' ? 
+          `Pontuação: ${score}%` : 
+          `Pîtasawa: ${score}%`,
+      });
+    }
+    
+    setActiveLessonId(null);
+  };
+
+  const handleBackToLessons = () => {
+    setActiveLessonId(null);
+  };
+
+  if (activeLessonId) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-green-50 via-amber-50 to-orange-50">
+        <Header 
+          currentLanguage={currentLanguage}
+          onLanguageToggle={handleLanguageToggle}
+          userName="Komo Wai Wai"
+        />
+        
+        <main className="max-w-4xl mx-auto p-4 pb-20">
+          <LessonActivity
+            lessonId={activeLessonId}
+            language={currentLanguage}
+            onComplete={handleLessonComplete}
+            onBack={handleBackToLessons}
+          />
+        </main>
+      </div>
+    );
+  }
 
   const renderContent = () => {
     switch (activeTab) {
@@ -156,7 +219,7 @@ const Index = () => {
             
             <div>
               <h3 className="text-xl font-bold text-gray-800 mb-4">
-                {currentLanguage === 'pt' ? 'Continue de onde parou' : 'Aikuaá jey sendá suí'}
+                {currentLanguage === 'pt' ? 'Continue sua jornada' : 'Tîkse ne rape'}
               </h3>
               <div className="space-y-4">
                 {lessons.slice(0, 2).map(lesson => (
@@ -177,10 +240,12 @@ const Index = () => {
           <div className="space-y-6">
             <div className="text-center">
               <h2 className="text-2xl font-bold text-gray-800 mb-2">
-                {currentLanguage === 'pt' ? 'Todas as Lições' : 'Opaĩ Mbaé Kuaá'}
+                {currentLanguage === 'pt' ? 'Lições Wai Wai' : 'Wai Wai Mbaé Kuaá'}
               </h2>
               <p className="text-gray-600">
-                {currentLanguage === 'pt' ? 'Escolha uma lição para começar' : 'Asaisú yepé mbaé kuaá aipiri ará'}
+                {currentLanguage === 'pt' ? 
+                  'Aprenda nossa língua e preserve nossa cultura' : 
+                  'Kuaá yane nheenga yane kultura ukana'}
               </p>
             </div>
             
@@ -205,7 +270,9 @@ const Index = () => {
                 {currentLanguage === 'pt' ? 'Suas Conquistas' : 'Ne Mbaé Porandu'}
               </h2>
               <p className="text-gray-600">
-                {currentLanguage === 'pt' ? 'Acompanhe seu progresso' : 'Amaã mbaé resá oiko'}
+                {currentLanguage === 'pt' ? 
+                  'Acompanhe seu progresso cultural' : 
+                  'Amaã ne kultura pukusawa'}
               </p>
             </div>
             
@@ -229,10 +296,12 @@ const Index = () => {
                 👤
               </div>
               <h2 className="text-xl font-bold text-gray-800 mb-2">
-                {currentLanguage === 'pt' ? 'Usuário da Comunidade' : 'Tetama Mira'}
+                {currentLanguage === 'pt' ? 'Estudante Wai Wai' : 'Wai Wai Mbaekuaasara'}
               </h2>
               <p className="text-gray-600 mb-4">
-                {currentLanguage === 'pt' ? 'Membro desde Janeiro 2024' : 'Mira iepé Janeiro 2024 suí'}
+                {currentLanguage === 'pt' ? 
+                  'Preservando nossa língua desde Janeiro 2024' : 
+                  'Yane nheenga murakí Janeiro 2024 suí'}
               </p>
               
               <div className="grid grid-cols-2 gap-4 text-center">
@@ -263,7 +332,7 @@ const Index = () => {
       <Header 
         currentLanguage={currentLanguage}
         onLanguageToggle={handleLanguageToggle}
-        userName="Ana Silva"
+        userName="Komo Wai Wai"
       />
       
       <main className="max-w-4xl mx-auto p-4 pb-20">
