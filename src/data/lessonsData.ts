@@ -59,5 +59,65 @@ export const lessonsData = [
     difficulty: 'medium' as const,
     isLocked: false,
     isCompleted: false
+  },
+  {
+    id: 5,
+    title: {
+      pt: 'Família e Relações Sociais',
+      waiwai: 'Tetama Mîrî irumu'
+    },
+    description: {
+      pt: 'Aprenda sobre parentesco e relações familiares',
+      waiwai: 'Kuaá tetama mîrî yurundewasawa'
+    },
+    type: 'vocabulary' as const,
+    difficulty: 'easy' as const,
+    isLocked: false,
+    isCompleted: false
+  },
+  {
+    id: 6,
+    title: {
+      pt: 'Plantas Medicinais e Cura',
+      waiwai: 'Pohã Yané Pujasawa'
+    },
+    description: {
+      pt: 'Conhecimento tradicional sobre plantas que curam',
+      waiwai: 'Tamuxî kuaá pohã marangatusawa'
+    },
+    type: 'culture' as const,
+    difficulty: 'medium' as const,
+    isLocked: false,
+    isCompleted: false
+  },
+  {
+    id: 7,
+    title: {
+      pt: 'Números e Contagem',
+      waiwai: 'Papasawa Kuaá'
+    },
+    description: {
+      pt: 'Sistema numérico tradicional Wai Wai',
+      waiwai: 'Wai Wai papasawa tamuxî'
+    },
+    type: 'vocabulary' as const,
+    difficulty: 'easy' as const,
+    isLocked: false,
+    isCompleted: false
+  },
+  {
+    id: 8,
+    title: {
+      pt: 'Rituais e Cerimônias Sagradas',
+      waiwai: 'Ukwawasawa Poraé'
+    },
+    description: {
+      pt: 'Tradições espirituais e cerimônias importantes',
+      waiwai: 'Yurara poraé yane kultura'
+    },
+    type: 'culture' as const,
+    difficulty: 'hard' as const,
+    isLocked: false,
+    isCompleted: false
   }
 ];

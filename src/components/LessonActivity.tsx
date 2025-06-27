@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Trophy, Star, RotateCcw } from 'lucide-react';
 import VocabularyActivity from './VocabularyActivity';
@@ -18,7 +17,7 @@ const LessonActivity: React.FC<LessonActivityProps> = ({ lessonId, language, onC
   const [storyCompleted, setStoryCompleted] = useState(false);
   const [finalScore, setFinalScore] = useState(0);
 
-  // Dados das lições em Wai Wai
+  // Dados expandidos das lições em Wai Wai
   const lessonData = {
     1: {
       vocabulary: [
@@ -57,73 +56,73 @@ const LessonActivity: React.FC<LessonActivityProps> = ({ lessonId, language, onC
         },
         {
           id: 4,
-          waiwai: 'Tuna',
-          portuguese: 'Água',
-          pronunciation: 'tu-na',
-          image: '💧',
+          waiwai: 'Maã',
+          portuguese: 'O que?',
+          pronunciation: 'ma-ã',
+          image: '❓',
           audioDescription: {
-            pt: 'Líquido essencial para a vida',
-            waiwai: 'Kaxî tîkse tuna wehxa'
+            pt: 'Pergunta sobre alguma coisa',
+            waiwai: 'Mbaé rã porandu'
           }
         },
         {
           id: 5,
-          waiwai: 'Komo',
-          portuguese: 'Criança',
-          pronunciation: 'ko-mo',
-          image: '👶',
+          waiwai: 'Mamé',
+          portuguese: 'Onde?',
+          pronunciation: 'ma-mé',
+          image: '📍',
           audioDescription: {
-            pt: 'Pessoa jovem da comunidade',
-            waiwai: 'Komo mîrî tetama kîrî'
+            pt: 'Pergunta sobre localização',
+            waiwai: 'Tetama rã porandu'
           }
         }
       ],
       story: {
         title: {
-          pt: 'A Lenda do Rio Sagrado',
-          waiwai: 'Kaxî Tuna Pamîle'
+          pt: 'A Primeira Saudação',
+          waiwai: 'Wayamî Yepé Tenondé'
         },
         parts: [
           {
             id: 1,
             text: {
-              pt: 'Há muito tempo, nossos ancestrais viviam perto de um grande rio.',
-              waiwai: 'Kîse komo, yane tamuxî kaxî tuna pata kîrî wehxa.'
+              pt: 'Quando o sol nasceu pela primeira vez, os Wai Wai aprenderam a se cumprimentar.',
+              waiwai: 'Kuaraxy yepé tenondé osema ramé, Wai Wai kuaá wayamî.'
             },
-            image: '🏞️',
+            image: '🌅',
             audioNarration: {
-              pt: 'Esta é a história do rio sagrado de nosso povo',
-              waiwai: 'Kîrî pamîle yane kaxî tuna kîrî'
+              pt: 'Esta é a história de como aprendemos a nos saudar',
+              waiwai: 'Kîrî pamîle mîta kuaá wayamî'
             }
           },
           {
             id: 2,
             text: {
-              pt: 'O rio era a fonte de vida, fornecia peixes e água limpa.',
-              waiwai: 'Kaxî tuna wehxa kaxî, pira tuna eseru.'
+              pt: 'O espírito do sol ensinou: "Digam Wayamî quando se encontrarem".',
+              waiwai: 'Kuaraxy yurara umukameú: "Ejapo Wayamî ejotopa ramé".'
             },
-            image: '🐟',
+            image: '☀️',
             audioNarration: {
-              pt: 'O rio dava vida a toda a comunidade',
-              waiwai: 'Kaxî tuna tetama wehxa ukana'
+              pt: 'O sol nos ensinou a importância das saudações',
+              waiwai: 'Kuaraxy yumukameú wayamî katú'
             }
           },
           {
             id: 3,
             text: {
-              pt: 'Um dia, o espírito do rio apareceu para ensinar sobre respeito.',
-              waiwai: 'Yepé ara, kaxî tuna yurara amna tawya kîrî.'
+              pt: 'Desde então, todo Wai Wai saúda com alegria e respeito.',
+              waiwai: 'Aramé guí, opaĩ Wai Wai wayamî ewyryry ukwawasawa irumu.'
             },
-            image: '✨',
+            image: '🤝',
             audioNarration: {
-              pt: 'O espírito ensinou a importância do respeito',
-              waiwai: 'Yurara tawya ukwawasawa kîrî'
+              pt: 'Assim começou nossa tradição de saudações respeitosas',
+              waiwai: 'Amana yane wayamî tamuxî ukwawasawa'
             }
           }
         ],
         moralLesson: {
-          pt: 'Devemos sempre respeitar a natureza, pois ela nos dá tudo que precisamos.',
-          waiwai: 'Yane ukwawasawa kaá, amana yane yumuesara ukana.'
+          pt: 'Saudar com respeito é o primeiro passo para uma boa conversa.',
+          waiwai: 'Wayamî ukwawasawa nheenga katú reko tenondé.'
         }
       },
       quiz: [
@@ -134,8 +133,8 @@ const LessonActivity: React.FC<LessonActivityProps> = ({ lessonId, language, onC
             waiwai: 'Mîta se "Wayamî" karaiwa nheenga rupî?'
           },
           options: {
-            pt: ['Wayamî', 'Wanî', 'Yewka', 'Tuna'],
-            waiwai: ['Olá', 'Tchau', 'Nome', 'Água']
+            pt: ['Wayamî', 'Wanî', 'Yewka', 'Maã'],
+            waiwai: ['Olá', 'Tchau', 'Nome', 'O que?']
           },
           correctAnswer: 0,
           explanation: {
@@ -146,33 +145,17 @@ const LessonActivity: React.FC<LessonActivityProps> = ({ lessonId, language, onC
         {
           id: 2,
           question: {
-            pt: 'O que significa "Tuna" em português?',
-            waiwai: 'Mîta "Tuna" karaiwa nheenga rupî?'
+            pt: 'Qual palavra usamos para perguntar "Onde?"',
+            waiwai: 'Mbaé ewka "Mamé" porandu arama?'
           },
           options: {
-            pt: ['Fogo', 'Água', 'Terra', 'Ar'],
-            waiwai: ['Tatá', 'Tuna', 'Ywý', 'Ywaka']
+            pt: ['Maã', 'Mamé', 'Yewka', 'Wayamî'],
+            waiwai: ['O que?', 'Onde?', 'Nome', 'Olá']
           },
           correctAnswer: 1,
           explanation: {
-            pt: 'Tuna significa água, elemento sagrado na cultura Wai Wai.',
-            waiwai: 'Tuna ukwawasawa yane kultura rupî.'
-          }
-        },
-        {
-          id: 3,
-          question: {
-            pt: 'Qual é o ensinamento principal da lenda do rio?',
-            waiwai: 'Mîta tawya turusú kaxî tuna pamîle suí?'
-          },
-          options: {
-            pt: ['Pescar sempre', 'Respeitar a natureza', 'Nadar no rio', 'Construir casas'],
-            waiwai: ['Pira pewa nungara', 'Kaá ukwawasawa', 'Tuna pupé yu', 'Uka yakana']
-          },
-          correctAnswer: 1,
-          explanation: {
-            pt: 'A lenda ensina que devemos respeitar a natureza que nos sustenta.',
-            waiwai: 'Pamîle ukumukameú kaá ukwawasawa, amana yane murakí.'
+            pt: 'Mamé é usado para perguntar sobre localização.',
+            waiwai: 'Mamé tetama rã porandu arama.'
           }
         }
       ]
@@ -187,133 +170,427 @@ const LessonActivity: React.FC<LessonActivityProps> = ({ lessonId, language, onC
           image: '🐟',
           audioDescription: {
             pt: 'Animal aquático muito importante na alimentação',
-            waiwai: 'Tuna soí yane temî ukana'
+            waiwai: 'Tuna soí yane temî ukana katú'
           }
         },
         {
           id: 7,
-          waiwai: 'Yurara',
-          portuguese: 'Espírito',
-          pronunciation: 'yu-ra-ra',
-          image: '👻',
+          waiwai: 'Kawí',
+          portuguese: 'Macaco',
+          pronunciation: 'ka-wí',
+          image: '🐒',
           audioDescription: {
-            pt: 'Ser sagrado que protege a natureza',
-            waiwai: 'Ukwawasawa mîrî kaá murakí'
+            pt: 'Animal inteligente que vive nas árvores',
+            waiwai: 'Soí kuaá katú ywyrá kîrî wehxa'
           }
         },
         {
           id: 8,
-          waiwai: 'Kaá',
-          portuguese: 'Floresta',
-          pronunciation: 'ka-á',
-          image: '🌳',
+          waiwai: 'Jaguar',
+          portuguese: 'Onça',
+          pronunciation: 'ja-guar',
+          image: '🐆',
           audioDescription: {
-            pt: 'Grande área verde onde vivem muitos animais',
-            waiwai: 'Turusú kaá soí kîrî tetama'
+            pt: 'Grande felino, rei da floresta',
+            waiwai: 'Soí turusú, kaá tuwixawa'
           }
         },
         {
           id: 9,
-          waiwai: 'Soí',
-          portuguese: 'Animal',
-          pronunciation: 'so-í',
-          image: '🦜',
+          waiwai: 'Panapana',
+          portuguese: 'Borboleta',
+          pronunciation: 'pa-na-pa-na',
+          image: '🦋',
           audioDescription: {
-            pt: 'Seres vivos que habitam a floresta',
-            waiwai: 'Kaxî mbaé kaá kîrî wehxa'
+            pt: 'Inseto colorido que poliniza flores',
+            waiwai: 'Soí pindá putira memewa'
           }
         },
         {
           id: 10,
-          waiwai: 'Tatá',
-          portuguese: 'Fogo',
-          pronunciation: 'ta-tá',
-          image: '🔥',
+          waiwai: 'Tukana',
+          portuguese: 'Tucano',
+          pronunciation: 'tu-ka-na',
+          image: '🦜',
           audioDescription: {
-            pt: 'Elemento usado para cozinhar e aquecer',
-            waiwai: 'Temî memewa akaxî ukana'
+            pt: 'Ave com bico grande e colorido',
+            waiwai: 'Gwyra yú turusú pindá'
           }
         }
       ],
       story: {
         title: {
-          pt: 'O Pajé e os Animais da Floresta',
-          waiwai: 'Pajé Kaá Soí irumu'
+          pt: 'O Conselho dos Animais',
+          waiwai: 'Soí Potarasawa'
         },
         parts: [
           {
             id: 1,
             text: {
-              pt: 'O pajé mais sábio da aldeia conhecia a linguagem de todos os animais.',
-              waiwai: 'Pajé kuaá katú tetama kîrî opaĩ soí nheenga ukwawa.'
+              pt: 'Os animais da floresta se reuniram para decidir quem seria o guardião.',
+              waiwai: 'Kaá soí ojoaju murakisara jeporavogwér arama.'
             },
-            image: '👴',
+            image: '🌳',
             audioNarration: {
-              pt: 'O pajé era respeitado por sua sabedoria',
-              waiwai: 'Pajé ukwawasawa kuaá katú rupi'
+              pt: 'Todos os animais tinham algo importante para contribuir',
+              waiwai: 'Opaĩ soí oguereko mbaé katú oipytywõ arama'
             }
           },
           {
             id: 2,
             text: {
-              pt: 'Ele ensinou que cada animal tem um papel importante na natureza.',
-              waiwai: 'Umukameú mukũi soí ukana katú kaá kîrî.'
+              pt: 'O jaguar disse: "Sou forte e protejo a floresta dos perigos".',
+              waiwai: 'Jaguar ojapo: "Ixé katú, amurakí kaá marã suí".'
             },
-            image: '🦋',
+            image: '🐆',
             audioNarration: {
-              pt: 'Cada animal é importante no equilíbrio da floresta',
-              waiwai: 'Opaĩ soí katú kaá ukwawasawa kîrî'
+              pt: 'Cada animal mostrou suas qualidades únicas',
+              waiwai: 'Mukũi soí oikuauka ikatú opakatu'
             }
           },
           {
             id: 3,
             text: {
-              pt: 'A borboleta poliniza, o macaco dispersa sementes, todos são necessários.',
-              waiwai: 'Panapana putira murakí, kawí tîma musapí, opaĩ tekotewa.'
+              pt: 'O macaco falou: "Eu espalho sementes e ajudo a floresta crescer".',
+              waiwai: 'Kawí ombeú: "Amusapí tîma, aipytywõ kaá ukupuku".'
             },
             image: '🐒',
             audioNarration: {
-              pt: 'Todos os animais trabalham juntos na floresta',
-              waiwai: 'Opaĩ soí irundewé kaá rupî'
+              pt: 'Todos perceberam que cada um tinha um papel importante',
+              waiwai: 'Opaĩ okwawa mukũi oguereko tembiporu katú'
+            }
+          },
+          {
+            id: 4,
+            text: {
+              pt: 'Decidiram que todos juntos seriam os guardiões da floresta.',
+              waiwai: 'Oporavo opaĩ irundé kaá murakisara ramo.'
+            },
+            image: '🤝',
+            audioNarration: {
+              pt: 'Unidos, eles protegeriam melhor sua casa',
+              waiwai: 'Irundé, omurakí porã iteko'
             }
           }
         ],
         moralLesson: {
-          pt: 'Todos os seres vivos são importantes e devemos viver em harmonia com eles.',
-          waiwai: 'Opaĩ kaxî mbaé katú, yurundewé kaxî arama.'
+          pt: 'Cada ser tem um dom especial e juntos somos mais fortes.',
+          waiwai: 'Mukũi mbaé oguereko katú ha irundé yaikatu porã.'
         }
       },
       quiz: [
         {
-          id: 4,
+          id: 3,
           question: {
-            pt: 'Como se diz "Floresta" em Wai Wai?',
-            waiwai: 'Mîta se "Kaá" karaiwa nheenga rupî?'
+            pt: 'Qual animal é conhecido como o rei da floresta?',
+            waiwai: 'Mbaé soí kaá tuwixawa?'
           },
           options: {
-            pt: ['Kaá', 'Soí', 'Pira', 'Tatá'],
-            waiwai: ['Floresta', 'Animal', 'Peixe', 'Fogo']
+            pt: ['Jaguar', 'Kawí', 'Pira', 'Tukana'],
+            waiwai: ['Onça', 'Macaco', 'Peixe', 'Tucano']
           },
           correctAnswer: 0,
           explanation: {
-            pt: 'Kaá é a palavra Wai Wai para floresta, nosso lar sagrado.',
-            waiwai: 'Kaá yane tetama ukwawasawa.'
+            pt: 'O jaguar é respeitado como o rei da floresta pelos Wai Wai.',
+            waiwai: 'Jaguar ukwawasawa kaá tuwixawa ramo Wai Wai.'
           }
         },
         {
-          id: 5,
+          id: 4,
           question: {
-            pt: 'Qual animal o macaco representa na história?',
-            waiwai: 'Maã kawí pamîle kîrî ukwewé?'
+            pt: 'Qual animal ajuda a floresta espalhando sementes?',
+            waiwai: 'Mbaé soí oipytywõ kaá tîma musapí?'
           },
           options: {
-            pt: ['Dispersor de sementes', 'Caçador', 'Pescador', 'Construtor'],
-            waiwai: ['Tîma musapí', 'Suasara', 'Pirasara', 'Ukasara']
+            pt: ['Panapana', 'Kawí', 'Tukana', 'Pira'],
+            waiwai: ['Borboleta', 'Macaco', 'Tucano', 'Peixe']
+          },
+          correctAnswer: 1,
+          explanation: {
+            pt: 'O macaco espalha sementes ajudando a floresta a crescer.',
+            waiwai: 'Kawí omusapí tîma, kaá ukupuku arama.'
+          }
+        }
+      ]
+    },
+    5: {
+      vocabulary: [
+        {
+          id: 20,
+          waiwai: 'Tamuxî',
+          portuguese: 'Avô/Avó',
+          pronunciation: 'ta-mu-xî',
+          image: '👴',
+          audioDescription: {
+            pt: 'Pessoa mais velha da família, sábia e respeitada',
+            waiwai: 'Tetama tuja, kuaá katú ukwawasawa'
+          }
+        },
+        {
+          id: 21,
+          waiwai: 'Taýra',
+          portuguese: 'Filho/Filha',
+          pronunciation: 'ta-ý-ra',
+          image: '👶',
+          audioDescription: {
+            pt: 'Criança da família, nosso futuro',
+            waiwai: 'Tetama komo, yane ramoty'
+          }
+        },
+        {
+          id: 22,
+          waiwai: 'Kyna',
+          portuguese: 'Mulher',
+          pronunciation: 'ky-na',
+          image: '👩',
+          audioDescription: {
+            pt: 'Mulher da comunidade, força vital',
+            waiwai: 'Tetama kyna, ikatu turusú'
+          }
+        },
+        {
+          id: 23,
+          waiwai: 'Apyãba',
+          portuguese: 'Homem',
+          pronunciation: 'a-py-ã-ba',
+          image: '👨',
+          audioDescription: {
+            pt: 'Homem da comunidade, protetor da família',
+            waiwai: 'Tetama apyãba, tetama murakisara'
+          }
+        },
+        {
+          id: 24,
+          waiwai: 'Kunhamukú',
+          portuguese: 'Menina',
+          pronunciation: 'ku-nha-mu-kú',
+          image: '👧',
+          audioDescription: {
+            pt: 'Menina jovem, alegria da comunidade',
+            waiwai: 'Kyna komo, tetama roryry'
+          }
+        }
+      ],
+      story: {
+        title: {
+          pt: 'A Sabedoria dos Avós',
+          waiwai: 'Tamuxî Kuaá Katú'
+        },
+        parts: [
+          {
+            id: 1,
+            text: {
+              pt: 'A avó Wai Wai reuniu todas as crianças para contar histórias antigas.',
+              waiwai: 'Tamuxî kyna ojoaju opaĩ komo pamîle tuja ombeú arama.'
+            },
+            image: '👵',
+            audioNarration: {
+              pt: 'Os avós são os guardiões da nossa memória',
+              waiwai: 'Tamuxî yane manduarisawa murakisara'
+            }
+          },
+          {
+            id: 2,
+            text: {
+              pt: 'Ela ensinou que cada pessoa da família tem um papel importante.',
+              waiwai: 'Umukameú mukũi tetama mîrî oguereko tembiporu katú.'
+            },
+            image: '👨‍👩‍👧‍👦',
+            audioNarration: {
+              pt: 'A família é como uma grande árvore com muitos galhos',
+              waiwai: 'Tetama ywyrá turusú ramo heta akã irumu'
+            }
+          },
+          {
+            id: 3,
+            text: {
+              pt: 'Os pais protegem, as crianças aprendem, todos se ajudam.',
+              waiwai: 'Tuware omurakí, komo ombaé kuaá, opaĩ oipytywõ.'
+            },
+            image: '🤱',
+            audioNarration: {
+              pt: 'Juntos formamos uma comunidade forte e unida',
+              waiwai: 'Irundé yajapo tetama katú irundewasawa'
+            }
+          }
+        ],
+        moralLesson: {
+          pt: 'A família é nossa primeira escola e nossa maior força.',
+          waiwai: 'Tetama yane mboexaháwa tenondé ha yane ikatu turusú.'
+        }
+      },
+      quiz: [
+        {
+          id: 9,
+          question: {
+            pt: 'Como chamamos os avós em Wai Wai?',
+            waiwai: 'Mîta jajapopa tamuxî Wai Wai nheenga rupî?'
+          },
+          options: {
+            pt: ['Tamuxî', 'Taýra', 'Kyna', 'Apyãba'],
+            waiwai: ['Avô/Avó', 'Filho/Filha', 'Mulher', 'Homem']
           },
           correctAnswer: 0,
           explanation: {
-            pt: 'O macaco espalha sementes, ajudando a floresta a crescer.',
-            waiwai: 'Kawí tîma musapí, kaá ukana pukusawa.'
+            pt: 'Tamuxî é a palavra respeitosa para avós em Wai Wai.',
+            waiwai: 'Tamuxî ewka ukwawasawa tamuxî Wai Wai rupî.'
+          }
+        },
+        {
+          id: 10,
+          question: {
+            pt: 'Qual é o papel principal da família na cultura Wai Wai?',
+            waiwai: 'Mbaé tetama tembiporu turusú Wai Wai kultura rupî?'
+          },
+          options: {
+            pt: ['Ensinar e proteger', 'Apenas trabalhar', 'Só brincar', 'Nada importante'],
+            waiwai: ['Mboexá ha murakí', 'Tembiapo nhõ', 'Nhemongeta nhõ', 'Mbaé eỹ katú']
+          },
+          correctAnswer: 0,
+          explanation: {
+            pt: 'A família ensina tradições e protege uns aos outros.',
+            waiwai: 'Tetama omboexá tamuxî ha omurakí.'
+          }
+        }
+      ]
+    },
+    7: {
+      vocabulary: [
+        {
+          id: 30,
+          waiwai: 'Peteĩ',
+          portuguese: 'Um',
+          pronunciation: 'pe-te-ĩ',
+          image: '1️⃣',
+          audioDescription: {
+            pt: 'Primeiro número, começo de tudo',
+            waiwai: 'Papaha tenondé, opaĩ mbaé ñepyrũ'
+          }
+        },
+        {
+          id: 31,
+          waiwai: 'Mokõi',
+          portuguese: 'Dois',
+          pronunciation: 'mo-kõi',
+          image: '2️⃣',
+          audioDescription: {
+            pt: 'Segundo número, representando união',
+            waiwai: 'Mokõiha papaha, irundewasawa jehaipyre'
+          }
+        },
+        {
+          id: 32,
+          waiwai: 'Mbohapy',
+          portuguese: 'Três',
+          pronunciation: 'mbo-ha-py',
+          image: '3️⃣',
+          audioDescription: {
+            pt: 'Terceiro número, símbolo de equilíbrio',
+            waiwai: 'Mbohapyha papaha, tekojoja ra'angaitéva'
+          }
+        },
+        {
+          id: 33,
+          waiwai: 'Irundy',
+          portuguese: 'Quatro',
+          pronunciation: 'i-run-dy',
+          image: '4️⃣',
+          audioDescription: {
+            pt: 'Quarto número, representando os pontos cardeais',
+            waiwai: 'Irundyha papaha, ára opakatu jehaipyre'
+          }
+        },
+        {
+          id: 34,
+          waiwai: 'Po',
+          portuguese: 'Cinco',
+          pronunciation: 'po',
+          image: '5️⃣',
+          audioDescription: {
+            pt: 'Quinto número, como os dedos de uma mão',
+            waiwai: 'Poha papaha, po pysã ramo'
+          }
+        }
+      ],
+      story: {
+        title: {
+          pt: 'Os Cinco Irmãos Sagrados',
+          waiwai: 'Po Kyñá Ukwawasawa'
+        },
+        parts: [
+          {
+            id: 1,
+            text: {
+              pt: 'Há muito tempo, cinco irmãos viviam em harmonia na floresta.',
+              waiwai: 'Yma rire, po kyñá oiko tekojojahápe kaá rupî.'
+            },
+            image: '🌟',
+            audioNarration: {
+              pt: 'Cada irmão representava um número sagrado',
+              waiwai: 'Mukũi kyñá ojehaipyre papaha ukwawasawa'
+            }
+          },
+          {
+            id: 2,
+            text: {
+              pt: 'O primeiro era sábio, o segundo corajoso, o terceiro gentil.',
+              waiwai: 'Tenondé kuaá katú, mokõiha py\'a katú, mbohapyha porã.'
+            },
+            image: '👥',
+            audioNarration: {
+              pt: 'Cada um tinha uma qualidade especial',
+              waiwai: 'Mukũi oguereko katú ijamiré'
+            }
+          },
+          {
+            id: 3,
+            text: {
+              pt: 'Juntos, eles ensinaram o povo a contar e a viver em paz.',
+              waiwai: 'Irundé, omboexá ava papasawa ha tekojojahápe oiko.'
+            },
+            image: '🤝',
+            audioNarration: {
+              pt: 'Os números se tornaram parte da nossa cultura',
+              waiwai: 'Papaha oiko yane kultura rupî'
+            }
+          }
+        ],
+        moralLesson: {
+          pt: 'Os números nos ajudam a organizar e compreender o mundo.',
+          waiwai: 'Papaha oipytywõ yaikuaa ha yambojeporã ko yvy.'
+        }
+      },
+      quiz: [
+        {
+          id: 13,
+          question: {
+            pt: 'Como se diz "três" em Wai Wai?',
+            waiwai: 'Mîta se "mbohapy" karaiwa nheenga rupî?'
+          },
+          options: {
+            pt: ['Peteĩ', 'Mokõi', 'Mbohapy', 'Irundy'],
+            waiwai: ['Um', 'Dois', 'Três', 'Quatro']
+          },
+          correctAnswer: 2,
+          explanation: {
+            pt: 'Mbohapy significa três e representa equilíbrio.',
+            waiwai: 'Mbohapy he\'i mbohapy ha ojehaipyre tekojoja.'
+          }
+        },
+        {
+          id: 14,
+          question: {
+            pt: 'Quantos dedos temos em uma mão?',
+            waiwai: 'Mboy pysã po pegua?'
+          },
+          options: {
+            pt: ['Irundy', 'Po', 'Mbohapy', 'Mokõi'],
+            waiwai: ['Quatro', 'Cinco', 'Três', 'Dois']
+          },
+          correctAnswer: 1,
+          explanation: {
+            pt: 'Po significa cinco, como os dedos de uma mão.',
+            waiwai: 'Po he\'i po, po pysã ramo.'
           }
         }
       ]
@@ -321,6 +598,27 @@ const LessonActivity: React.FC<LessonActivityProps> = ({ lessonId, language, onC
   };
 
   const currentLesson = lessonData[lessonId as keyof typeof lessonData];
+
+  if (!currentLesson) {
+    return (
+      <div className="max-w-2xl mx-auto p-6 bg-white rounded-2xl shadow-lg text-center">
+        <h2 className="text-2xl font-bold text-gray-800 mb-4">
+          {language === 'pt' ? 'Lição em desenvolvimento' : 'Mbaé kuaá ojejapo gua'}
+        </h2>
+        <p className="text-gray-600 mb-6">
+          {language === 'pt' ? 
+            'Esta lição ainda está sendo preparada. Volte em breve!' : 
+            'Ko mbaé kuaá ojejapo gua. Eju peve!'}
+        </p>
+        <button
+          onClick={onBack}
+          className="bg-green-500 text-white px-6 py-3 rounded-xl font-medium hover:bg-green-600 transition-colors"
+        >
+          {language === 'pt' ? 'Voltar' : 'Guevi'}
+        </button>
+      </div>
+    );
+  }
 
   const handleVocabularyComplete = () => {
     setVocabularyCompleted(true);
