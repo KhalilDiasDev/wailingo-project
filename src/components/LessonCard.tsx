@@ -6,17 +6,17 @@ interface LessonCardProps {
   id: number;
   title: {
     pt: string;
-    indigenous: string;
+    waiwai: string;
   };
   description: {
     pt: string;
-    indigenous: string;
+    waiwai: string;
   };
   type: 'vocabulary' | 'grammar' | 'culture' | 'story';
   difficulty: 'easy' | 'medium' | 'hard';
   isLocked: boolean;
   isCompleted: boolean;
-  language: 'pt' | 'indigenous';
+  language: 'pt' | 'waiwai';
   onClick: () => void;
 }
 
@@ -49,7 +49,7 @@ const LessonCard: React.FC<LessonCardProps> = ({
       medium: 'Médio',
       hard: 'Difícil'
     },
-    indigenous: {
+    waiwai: {
       easy: 'Ndahasí',
       medium: 'Pitéra',
       hard: 'Hasí'
@@ -62,7 +62,7 @@ const LessonCard: React.FC<LessonCardProps> = ({
       completed: 'Revisar',
       start: 'Começar'
     },
-    indigenous: {
+    waiwai: {
       locked: 'Ojokái',
       completed: 'Amaã jey',
       start: 'Aipiri'

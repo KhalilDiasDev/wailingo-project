@@ -4,15 +4,15 @@ import React from 'react';
 interface AchievementBadgeProps {
   title: {
     pt: string;
-    indigenous: string;
+    waiwai: string;
   };
   description: {
     pt: string;
-    indigenous: string;
+    waiwai: string;
   };
   icon: string;
   isUnlocked: boolean;
-  language: 'pt' | 'indigenous';
+  language: 'pt' | 'waiwai';
   rarity: 'common' | 'rare' | 'legendary';
 }
 
