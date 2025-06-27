@@ -486,7 +486,7 @@ const LessonActivity: React.FC<LessonActivityProps> = ({ lessonId, language, onC
           image: '3️⃣',
           audioDescription: {
             pt: 'Terceiro número, símbolo de equilíbrio',
-            waiwai: 'Mbohapyha papaha, tekojoja ra'angaitéva'
+            waiwai: 'Mbohapyha papaha, tekojoja ra\'angaitéva'
           }
         },
         {
