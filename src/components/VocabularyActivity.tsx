@@ -136,7 +136,7 @@ const VocabularyActivity: React.FC<VocabularyActivityProps> = ({
           
           <div className="mb-4">
             <h3 className="text-3xl font-bold text-gray-800 mb-2">
-              {language === 'waiwai' ? currentWord.waiwai : currentWord.portuguese}
+              {language === 'pt' ? currentWord.waiwai : currentWord.portuguese}
             </h3>
             
             <div className="flex items-center justify-center gap-2 mb-2">
@@ -144,7 +144,7 @@ const VocabularyActivity: React.FC<VocabularyActivityProps> = ({
                 {t.pronunciation} /{currentWord.pronunciation}/
               </span>
               <button
-                onClick={() => speakWord(language === 'waiwai' ? currentWord.waiwai : currentWord.portuguese)}
+                onClick={() => speakWord(language === 'pt' ? currentWord.waiwai : currentWord.portuguese)}
                 className="p-2 bg-blue-100 hover:bg-blue-200 rounded-full transition-colors"
               >
                 <Volume2 size={20} className="text-blue-600" />
@@ -168,7 +168,7 @@ const VocabularyActivity: React.FC<VocabularyActivityProps> = ({
               <div className="flex items-center justify-center gap-2 mb-2">
                 <CheckCircle className="w-5 h-5 text-green-600" />
                 <span className="font-bold text-green-800">
-                  {language === 'waiwai' ? currentWord.portuguese : currentWord.waiwai}
+                  {language === 'pt' ? currentWord.portuguese : currentWord.waiwai}
                 </span>
               </div>
             </div>

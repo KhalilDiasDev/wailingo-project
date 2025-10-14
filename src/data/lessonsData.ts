@@ -119,5 +119,35 @@ export const lessonsData = [
     difficulty: 'hard' as const,
     isLocked: false,
     isCompleted: false
+  },
+  {
+    id: 9,
+    title: {
+      pt: 'Cores e Natureza',
+      waiwai: 'Piná Kaá irumu'
+    },
+    description: {
+      pt: 'Aprenda as cores e elementos da natureza',
+      waiwai: 'Kuaá piná kaá tetama suí'
+    },
+    type: 'vocabulary' as const,
+    difficulty: 'easy' as const,
+    isLocked: false,
+    isCompleted: false
+  },
+  {
+    id: 10,
+    title: {
+      pt: 'Comidas Tradicionais',
+      waiwai: 'Temîu Tamuxî'
+    },
+    description: {
+      pt: 'Conheça os alimentos e pratos tradicionais Wai Wai',
+      waiwai: 'Kuaá yane temîu tamuxî'
+    },
+    type: 'culture' as const,
+    difficulty: 'medium' as const,
+    isLocked: false,
+    isCompleted: false
   }
 ];

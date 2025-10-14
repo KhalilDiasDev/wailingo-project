@@ -21,20 +21,15 @@ const HomePage: React.FC<HomePageProps> = ({ language, userProgress, onLessonCli
     <div className="space-y-6">
       <WelcomeCard language={language} userProgress={userProgress} />
       
-      <div>
-        <h3 className="text-xl font-bold text-gray-800 mb-4">
-          {language === 'pt' ? 'Continue sua jornada' : 'Tîkse ne rape'}
-        </h3>
-        <div className="space-y-4">
-          {processedLessons.map(lesson => (
-            <LessonCard
-              key={lesson.id}
-              {...lesson}
-              language={language}
-              onClick={() => onLessonClick(lesson.id)}
-            />
-          ))}
-        </div>
+      <div className="space-y-4">
+        {processedLessons.map(lesson => (
+          <LessonCard
+            key={lesson.id}
+            {...lesson}
+            language={language}
+            onClick={() => onLessonClick(lesson.id)}
+          />
+        ))}
       </div>
     </div>
   );
