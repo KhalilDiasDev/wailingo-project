@@ -10,7 +10,7 @@ export interface UserProgress {
 
 export const useAppState = () => {
   const [currentLanguage, setCurrentLanguage] = useState<'pt' | 'waiwai'>('pt');
-  const [activeTab, setActiveTab] = useState<'home' | 'lessons' | 'achievements' | 'profile' | 'progress'>('home');
+  const [activeTab, setActiveTab] = useState<'home' | 'lessons' | 'profile' | 'progress'>('home');
   const [activeLessonId, setActiveLessonId] = useState<number | null>(null);
   const [userProgress, setUserProgress] = useState<UserProgress>({
     lessonsCompleted: 5,

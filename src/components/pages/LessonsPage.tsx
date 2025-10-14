@@ -14,7 +14,7 @@ const LessonsPage: React.FC<LessonsPageProps> = ({ language, userProgress, onLes
   const processedLessons = lessonsData.map(lesson => ({
     ...lesson,
     isCompleted: userProgress.completedLessons.has(lesson.id),
-    isLocked: lesson.id > 1 && !userProgress.completedLessons.has(lesson.id - 1)
+    isLocked: false
   }));
 
   return (

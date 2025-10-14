@@ -25,18 +25,6 @@ const Index = () => {
   const { toast } = useToast();
 
   const handleLessonClick = (lessonId: number) => {
-    // Check if lesson is locked based on completion of previous lessons
-    if (lessonId > 1 && !userProgress.completedLessons.has(lessonId - 1)) {
-      toast({
-        title: currentLanguage === 'pt' ? 'Lição bloqueada' : 'Mbaé kuaá ojokái',
-        description: currentLanguage === 'pt' ? 
-          'Complete as lições anteriores primeiro' : 
-          'Muapysyk mokõi mbaé kuaá senundé',
-        variant: 'destructive'
-      });
-      return;
-    }
-    
     setActiveLessonId(lessonId);
   };
 
@@ -101,14 +89,6 @@ const Index = () => {
             language={currentLanguage}
             userProgress={userProgress}
             onLessonClick={handleLessonClick}
-          />
-        );
-
-      case 'achievements':
-        return (
-          <AchievementsPage
-            language={currentLanguage}
-            userProgress={userProgress}
           />
         );
 

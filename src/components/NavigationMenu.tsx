@@ -3,8 +3,8 @@ import React from 'react';
 import { Home, BookOpen, Award, User, BarChart3 } from 'lucide-react';
 
 interface NavigationMenuProps {
-  activeTab: 'home' | 'lessons' | 'achievements' | 'profile' | 'progress';
-  onTabChange: (tab: 'home' | 'lessons' | 'achievements' | 'profile' | 'progress') => void;
+  activeTab: 'home' | 'lessons' | 'profile' | 'progress';
+  onTabChange: (tab: 'home' | 'lessons' | 'profile' | 'progress') => void;
   language: 'pt' | 'waiwai';
   isTeacher?: boolean;
 }
@@ -19,14 +19,12 @@ const NavigationMenu: React.FC<NavigationMenuProps> = ({
     pt: {
       home: 'Início',
       lessons: 'Lições',
-      achievements: 'Conquistas',
       profile: 'Perfil',
       progress: 'Progresso'
     },
     waiwai: {
       home: 'Tendawa',
       lessons: 'Mbaé kuaá',
-      achievements: 'Mbaé porandu',
       profile: 'Aé',
       progress: 'Tamîkî'
     }
@@ -37,7 +35,6 @@ const NavigationMenu: React.FC<NavigationMenuProps> = ({
   const menuItems = [
     { id: 'home' as const, icon: Home, label: t.home },
     { id: 'lessons' as const, icon: BookOpen, label: t.lessons },
-    { id: 'achievements' as const, icon: Award, label: t.achievements },
     { id: 'profile' as const, icon: User, label: t.profile },
     ...(isTeacher ? [{ id: 'progress' as const, icon: BarChart3, label: t.progress }] : [])
   ];
