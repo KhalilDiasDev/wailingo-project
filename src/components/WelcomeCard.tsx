@@ -154,7 +154,7 @@ const WelcomePage: React.FC<WelcomePageProps> = ({ language = 'pt' }) => {
     <div className="min-h-screen ">
       <div className="px-4 py-10 text-center max-w-2xl mx-auto">
         <div style={{textAlign:'center',justifyContent:'center',display:'flex'}}>
-        <img src='/public/wingo-w.png' width={'270px'}/>
+        <img src='https://i.postimg.cc/FHDRJcw7/wingo-w.png' width={'270px'}/>
         </div>
         <h1 className="text-5xl font-bold text-gray-900 mb-3">{t.greeting}</h1>
         <p className="text-xl text-gray-600 mb-8">{t.subtitle}</p>

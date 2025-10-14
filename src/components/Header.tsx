@@ -29,7 +29,7 @@ const Header: React.FC<HeaderProps> = ({ currentLanguage, onLanguageToggle, user
       <div className="max-w-4xl mx-auto flex items-center justify-between">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
-            <span className="text-green-600 font-bold text-lg"><img src='/public/wingo.png' /></span>
+            <span className="text-green-600 font-bold text-lg"><img src='https://i.postimg.cc/gkyrm1Dm/wingo.png' /></span>
           </div>
           <div>
             <h1 className="text-lg font-bold">{t.platform}</h1>
