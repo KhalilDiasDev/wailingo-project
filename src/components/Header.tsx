@@ -12,7 +12,7 @@ const Header: React.FC<HeaderProps> = ({ currentLanguage, onLanguageToggle, user
   const translations = {
     pt: {
       welcome: 'Bem-vindo',
-      platform: 'Plataforma Educacional Wai Wai',
+      platform: 'Wailingo',
       language: 'Idioma'
     },
     waiwai: {
@@ -29,7 +29,7 @@ const Header: React.FC<HeaderProps> = ({ currentLanguage, onLanguageToggle, user
       <div className="max-w-4xl mx-auto flex items-center justify-between">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
-            <span className="text-green-600 font-bold text-lg">🌿</span>
+            <span className="text-green-600 font-bold text-lg"><img src='/public/wingo.png' /></span>
           </div>
           <div>
             <h1 className="text-lg font-bold">{t.platform}</h1>
@@ -44,7 +44,6 @@ const Header: React.FC<HeaderProps> = ({ currentLanguage, onLanguageToggle, user
             onClick={onLanguageToggle}
             className="bg-white/20 hover:bg-white/30 px-3 py-2 rounded-lg text-sm font-medium transition-colors flex items-center gap-2"
           >
-            <span>🗣️</span>
             {currentLanguage === 'pt' ? 'Wai Wai' : 'Português'}
           </button>
           

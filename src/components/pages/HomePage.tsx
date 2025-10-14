@@ -19,7 +19,7 @@ const HomePage: React.FC<HomePageProps> = ({ language, userProgress, onLessonCli
 
   return (
     <div className="space-y-6">
-      <WelcomeCard language={language} userProgress={userProgress} />
+      <WelcomeCard language={language}  />
       
       <div className="space-y-4">
         {processedLessons.map(lesson => (
