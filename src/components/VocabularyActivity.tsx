@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Volume2, RotateCcw, CheckCircle, X } from 'lucide-react';
 
@@ -45,17 +44,19 @@ const VocabularyActivity: React.FC<VocabularyActivityProps> = ({
       back: 'Voltar',
       progress: 'Progresso'
     },
+    // --- SEÇÃO DE TRADUÇÃO ATUALIZADA ---
     waiwai: {
-      vocabulary: 'Ewka kîrî',
-      pronunciation: 'Tîse kîrî:',
-      showTranslation: 'Karaiwa kîrî amna',
-      hideTranslation: 'Karaiwa kîrî îka',
-      next: 'Kîn ewka',
-      previous: 'Wanî ewka',
-      complete: 'Pîrî',
-      back: 'Wanî',
-      progress: 'Tamîkî'
+      vocabulary: 'Etacitopo', // ATUALIZADO: de 'Ewka kîrî'
+      pronunciation: 'Yimtapotacho yukukmacho', // ATUALIZADO: de 'Tîse kîrî:'
+      showTranslation: 'Tapota towxapu yentopo', // ATUALIZADO: de 'Karaiwa kîrî amna'
+      hideTranslation: 'Tapota iyamtopo', // ATUALIZADO: de 'Karaiwa kîrî îka'
+      next: 'Tapota ponan hara', // ATUALIZADO: de 'Kîn ewka'
+      previous: 'Tapota Yìywapono', // ATUALIZADO: de 'Wanî ewka'
+      complete: 'Citîkatopo', // ATUALIZADO: de 'Pîrî'
+      back: 'Yîramanîhtopo', // ATUALIZADO: de 'Wanî'
+      progress: 'Enpotopo' // ATUALIZADO: de 'Tamîkî'
     }
+    // --- FIM DA ATUALIZAÇÃO ---
   };
 
   const t = translations[language];
@@ -81,6 +82,8 @@ const VocabularyActivity: React.FC<VocabularyActivityProps> = ({
   const speakWord = (text: string) => {
     if ('speechSynthesis' in window) {
       const utterance = new SpeechSynthesisUtterance(text);
+      // Nota: A síntese de voz para WaiWai provavelmente não existe.
+      // O 'en-US' é um fallback. O ideal seria ter arquivos de áudio.
       utterance.lang = language === 'pt' ? 'pt-BR' : 'en-US';
       speechSynthesis.speak(utterance);
     }

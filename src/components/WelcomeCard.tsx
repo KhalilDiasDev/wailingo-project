@@ -77,74 +77,79 @@ const WelcomePage: React.FC<WelcomePageProps> = ({ language = 'pt' }) => {
         }
       ]
     },
-    waiwai: {
-      greeting: 'Maã Wailingo! ',
-      subtitle: 'Kuaá Wai Wai rupî ne murakí yane tamuxî kultura',
-      about: 'Mbaé Wailingo',
-      aboutDesc: 'Wailingo maã kuaá yepé ne tamuxî rapi tamuará rupî kuaá Wai Wai rupî. Yawaxa kuaá murakí yané arupi, ne kuaá rope tîkse.',
-      vision: 'Yané Porandu',
-      visionDesc: 'Murakí Wai Wai rupî ne yawaxa kuaá arupi, yapé tîkse yané kultura.',
-      startLessons: 'Aipiri Kuaá',
-      lessonsTitle: 'Kuaá Mbaé Pîrî',
-      getStarted: 'Aipiri',
-      learnMore: 'Saãma kuaá',
-      features: [
-        {
-          icon: '📚',
-          title: 'Kuaá Pîrî',
-          desc: 'Yawaxa murakí rupî'
-        },
-        {
-          icon: '🎯',
-          title: 'Mbaé Porandu',
-          desc: 'Tîkse kuaá arupi'
-        },
-        {
-          icon: '👥',
-          title: 'Yapé',
-          desc: 'Tîkse yané arupi'
-        },
-        {
-          icon: '🏆',
-          title: 'Mbaé Porandu',
-          desc: 'Kuaá tîkse kuaá pîrî'
-        }
-      ],
-      initialLessons: [
-        {
-          id: 1,
-          title: 'Maã Kuaá',
-          description: 'Yawaxa maã Wai Wai rupî',
-          difficulty: 'Aipiri',
-          lessons: 5,
-          icon: '👋'
-        },
-        {
-          id: 2,
-          title: 'Mbaé Tamîkî',
-          description: 'Kuaá mbaé tamîkî rupî',
-          difficulty: 'Aipiri',
-          lessons: 4,
-          icon: '🔢'
-        },
-        {
-          id: 3,
-          title: 'Mbaé Tapî',
-          description: 'Kuaá mbaé tapî rupî',
-          difficulty: 'Aipiri',
-          lessons: 6,
-          icon: '🦜'
-        },
-        {
-          id: 4,
-          title: 'Yané Rupî',
-          description: 'Yawaxa yané rupî',
-          difficulty: 'Aipiri',
-          lessons: 5,
-       
-        }
-      ]
+waiwai: {
+  greeting: 'Kiŕwanhe mîmoko wailingo yaka',
+  subtitle: 'Wai Wai mtapotarî poko ehcamhokakî, kporin pen komo nîmîtho marha yîhcamnopura cexpore nasî kehtoporo komo, miyarorono me ehtome.',
+  about: 'Proxetu kacho pokono',
+  aboutDesc:
+    'Wayrinku kacho pratapohma, kehcamhokatopo kesemyapokatopo Wai Wai mtapotarî yaw mewretopo, kporin pen komo mtapotarî. Kpanatanmetopo yaw kehcamhokatopo yanme tak miyahxixa yîhtînoñe me tasî. Ero ke kwerî cirpore nasî kehtoporo komo.',
+  vision: 'Kiñirirî komo',
+  visionDesc:
+    'Wai Wai mtapotarî men kwerî cirpore kmeñekatîkapore marha nasî teknoroxia ñixaro, tooto komo ewto pokohakno komo yakro marha itore yihtînoñe me cexpore nasî kehtoporo komo, inkñixina yehtoporo.',
+  startLessons: 'Awehcamhokatopo yihciko',
+  lessonsTitle: 'Tapota mewrexapu Tîpîrî',
+  getStarted: 'Kehcamhokatopo Yihcitopo',
+  learnMore: 'Miya rma nay',
+
+  features: [
+    {
+      icon: '📚',
+      title: 'Cesemyapokaxi kpanatanmetopo citopo',
+      desc: 'Kiŕwanhe ehcampokakî, esemyapokakî tapota tîpîrî yihcitopo nixaro.'
+    },
+    {
+      icon: '🎯',
+      title: 'Tapota ceyuhsom komo',
+      desc: 'Tapota ceyuhsom komo poko esemyapokakî, xoku poko awehcamhokatopo poko marha.'
+    },
+    {
+      icon: '👥',
+      title: 'Ahnoro komo yanan',
+      desc: 'Anarî komo yakro awehcamhokatopo ciŕko, tîmtapotarî ro yaw tîmtapotaxmu komo yakro.'
+    },
+    {
+      icon: '🏆',
+      title: 'Kakronomacho komo',
+      desc: 'Awehcamhokatoponhîrî ahsîko badges ha.'
     }
+  ],
+
+  initialLessons: [
+    {
+      id: 1,
+      title: 'Ketîmtapotaretopo poreno tapota yaw',
+      description: 'Ehcampokakî men, ahciwa xa cetîmtapotare wai wai yaro kacho poko.',
+      difficulty: 'Yihciñe',
+      lessons: 5,
+      icon: '👋'
+    },
+    {
+      id: 2,
+      title: 'Yukuknomatopo komo, yakenon komo marha',
+      description: 'Mîhtînoya Wai Wai mtapotarî yaro yukuknomatopo',
+      difficulty: 'Yihciñe',
+      lessons: 4,
+      icon: '🔢'
+    },
+    {
+      id: 3,
+      title: 'Tanhamya cetarisom komo, comota cewno mko',
+      description: 'Ehcampokakî tanhamya cetarisom komo yosotî poko.',
+      difficulty: 'Yihciñe',
+      lessons: 6,
+      icon: '🦜'
+    },
+    {
+      id: 4,
+      title: 'Comota mko cewno yihtinotopo',
+      description: 'Vocabulário da natureza (comota mko)',
+      difficulty: 'Yihciñe',
+      lessons: 5,
+      icon: '🌿'
+    }
+  ]
+}
+
   };
 
   const t = translations[language];

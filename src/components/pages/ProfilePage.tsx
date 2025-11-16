@@ -15,7 +15,7 @@ const ProfilePage: React.FC<ProfilePageProps> = ({ language, userProgress }) => 
           👤
         </div>
         <h2 className="text-xl font-bold text-gray-800 mb-2">
-          {language === 'pt' ? 'Estudante Wai Wai' : 'Wai Wai Mbaekuaasara'}
+          {language === 'pt' ? 'Khalil Dias' : 'Khalil Dias'}
         </h2>
         <p className="text-gray-600 mb-4">
           {language === 'pt' ? 

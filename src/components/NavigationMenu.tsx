@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Home, BookOpen, Award, User, BarChart3 } from 'lucide-react';
 
@@ -23,10 +22,12 @@ const NavigationMenu: React.FC<NavigationMenuProps> = ({
       progress: 'Progresso'
     },
     waiwai: {
-      home: 'Tendawa',
-      lessons: 'Mbaé kuaá',
-      profile: 'Aé',
-      progress: 'Tamîkî'
+      // --- TRADUÇÕES ATUALIZADAS ---
+      home: 'Yihcirî', // Atualizado de 'Tendawa'
+      lessons: 'Tapota mko tîpîrî', // Atualizado de 'Mbaé kuaá'
+      profile: 'Yukuknon me cehsom', // Atualizado de 'Aé'
+      progress: 'Enpotopo' // Atualizado de 'Tamîkî'
+      // --- FIM DA ATUALIZAÇÃO ---
     }
   };
 
